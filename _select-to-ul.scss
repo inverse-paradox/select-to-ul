@@ -1,0 +1,75 @@
+// selected item options
+$stu-selected-width: 300px;
+$stu-selected-height: 36px;
+$stu-c-selected-bg: #ccc;
+$stu-c-selected-color: #f00;
+$stu-selected-padding: 6px 0 0 10px;
+$stu-c-selected-arrow-color: #f00;
+$stu-selected-arrow-size: 7px;
+
+// option item options
+$stu-c-option-bg: #eee;
+$stu-c-option-color: #f00;
+$stu-option-padding: 10px;
+
+// option item hover options
+$stu-c-option-hover-bg: #ddd;
+$stu-c-option-hover-color: #000;
+
+.select-ul-wrapper {
+    position: relative;
+    width: $stu-selected-width;
+    z-index: 2;
+    select {
+        display: none;
+    }
+    .selected-option {
+        background: $stu-c-selected-bg;
+        border: none;
+        color: $stu-c-selected-color;
+        display: block;
+        padding: $stu-selected-padding;
+        position: relative;
+        width: 100%;
+        height: $stu-selected-height;
+        @include boxsize;
+        &:before {
+            display: block;
+            content: "";
+            width: 0; 
+            height: 0; 
+            margin-top: -5px;
+            border-left: $stu-selected-arrow-size solid transparent;
+            border-right: $stu-selected-arrow-size solid transparent;
+            border-top: $stu-selected-arrow-size solid $stu-c-selected-arrow-color;
+            position: absolute;
+            top: 50%;
+            right: 10px;
+        }
+    }
+    .select-list {
+        display: none;
+        overflow: scroll;
+        margin: 0;
+        padding: 0;
+        position: absolute;
+        top: $stu-selected-height;
+        left: 0;
+        width: 100%;
+        height: 100px;
+        &.active {
+            display: block;
+        }
+        li {
+            background: $stu-c-option-bg;
+            color: $stu-c-option-color;
+            padding: $stu-option-padding;
+            cursor: pointer;
+            @include boxsize;
+            &:hover {
+                background: $stu-c-option-hover-bg;
+                color: $stu-c-option-hover-color;
+            }
+        }
+    }
+}

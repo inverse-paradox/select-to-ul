@@ -1,0 +1,15 @@
+{
+  "name": "ip-select-to-dd",
+  "version": "0.0.1",
+  "authors": [
+    "Shawn Hogan <shawn@inverseparadox.net>"
+  ],
+  "ignore": [
+    ".gitignore",
+    "bower.json",
+    "**/*.md"
+  ],
+  "description": "Front end plugin for converting <select> elements into <ul> elemnts",
+  "main": "_select-to-ul.scss",
+  "license": "MIT"
+}
